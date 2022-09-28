@@ -1,0 +1,23 @@
+server:
+  port: 8088
+logging:
+  level:
+    com.example.rabbitmq.service.*: DEBUG
+
+spring:
+  application:
+    name: hello-rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true #参数意义：true当没有合适的queue直接返回到ReturnCallback false没有合适的直接丢弃
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual

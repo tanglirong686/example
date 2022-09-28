@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.multiple.data.source.mapper.MultipleDataSourceMapper">
+
+    <select id="getListFromMaster" resultType="java.util.Map">
+    	SELECT * FROM T_DR_EVENT
+    </select>
+
+	<select id="getListFromCluster" resultType="java.util.Map">
+    	SELECT * FROM yxyd_cons_org
+    </select>
+
+	<select id="getListFromCluster1" resultType="java.util.Map">
+    	SELECT * FROM c_cons
+    </select>
+</mapper>
